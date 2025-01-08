@@ -117,3 +117,6 @@ setInterval(callback,1000); */
 
 
   // the thing which is dynamic that is, keeps changing is the state 
+
+
+  
