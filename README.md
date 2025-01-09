@@ -8,6 +8,8 @@
 <p>2.   View the tasks in a clear interface</p>
 <p>3.   Delete Tasks when completed</p>
 
+https://github.com/Exploring-glitch/To-Do-List/blob/9a5faf01e6f255e6e1f452f3658bb344ab09d21f/Screenshot%202025-01-09%20122734.png
+
 
 
 
