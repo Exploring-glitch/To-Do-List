@@ -8,5 +8,6 @@
 <p>2.   View the tasks in a clear interface</p>
 <p>3.   Delete Tasks when completed</p>
 
+![Screenshot of To-Do App](assets/screenshot.png)
 
 
