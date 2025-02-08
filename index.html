@@ -9,19 +9,17 @@
 </head>
 
 
-<body class="bg-red-200">
-    <div class="bg-white border-4 border-red-400 m-4 md:w-1/2 md:h-auto md:mx-auto md:my-56">
+<body class="bg-gray-800 flex justify-center items-center min-h-screen">
+    <div class="bg-gray-100 border-2 border-black m-4 rounded-lg shadow-lg w-full max-w-lg">
         
-        <h1 class="text-2xl font-bold flex justify-center underline my-2">TO-DO LIST</h1>
+        <h1 class="text-2xl font-semibold text-center underline my-2">TO-DO LIST</h1>
 
-        <div id="newdivhere" class="mx-1 md:mx-10 space-y-2 text-sm md:text-lg"></div>
+        <div id="newdivhere" class="mx-1 md:mx-10 space-y-3 text-sm md:text-lg"></div>
 
         <div class="flex mx-1 gap-1 md:gap-2 md:mx-10 my-5">
-            <input type="text" placeholder="Write your task " class="bg-white border-2 border-pink-600 text-black rounded-sm md:pl-2">
-            <button class="bg-pink-500 text-white pr-2 pl-2 rounded-sm hover:bg-pink-700" onclick="clickfunc()">Add Task</button> 
+            <input type="text" placeholder="Add a new task.." class="bg-white border-2 border-gray-600 text-black hover:border-2 hover:border-gray-700 rounded-sm md:pl-2 shadow-sm">
+            <button class="bg-gray-600 text-white pr-2 pl-2 rounded-sm hover:bg-gray-700 shadow-sm hover:scale-105 font-medium" onclick="clickfunc()">Add Task</button> 
         </div>
-        
-        
     </div>  
 </body>
 
@@ -29,9 +27,13 @@
 
 <script>
     let todos=[];
+    function capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     function clickfunc(){
+        let inputtext= document.querySelector("input").value.trim();
         todos.push({
-            title: document.querySelector("input").value
+            title: capitalize(inputtext)
         })
         document.querySelector("input").value="";
         render();
@@ -42,7 +44,7 @@
         render();
     }
     function editfunc(index){
-        let newtitle = prompt("Hey user! Edit your to-do here:", todos[index].title);
+        let newtitle = prompt("Heyy user! Edit your task here:", todos[index].title);
         if (newtitle!== null && newtitle.trim!== ""){
             todos[index].title = newtitle;
             render();
@@ -51,7 +53,6 @@
 
 
     function todocomponent(a,index){
-        
         const newhead= document.createElement("h1");
         const neweditbtn= document.createElement("button");
         const newdelbtn= document.createElement("button");
@@ -61,15 +62,17 @@
         neweditbtn.innerHTML="Edit";
         newdelbtn.innerHTML="Delete";
 
+        newhead.classList.add("text-lg","font-medium","text-gray-700");
+
         neweditbtn.onclick = function(){
             editfunc(index);
         }
-        neweditbtn.classList.add("bg-gray-300","hover:bg-gray-800", "hover:text-white","pl-4","pr-4", "rounded-xl","shadow-sm","mr-3Ghu");
+        neweditbtn.classList.add("text-white","bg-blue-500","hover:bg-blue-600", "hover:text-black","py-1","px-3", "rounded-md","shadow-sm","mr-3","font-medium","focus:outline-none","hover:scale-105");
 
         newdelbtn.onclick = function(){
             delefunc(index);
         }
-        newdelbtn.classList.add("bg-gray-300","hover:bg-gray-800", "hover:text-white","pl-4","pr-4", "rounded-xl","shadow-sm");
+        newdelbtn.classList.add("text-white","bg-red-500","hover:bg-red-600", "hover:text-black","py-1","px-3", "rounded-md","shadow-sm","mr-3","font-medium","focus:outline-none","hover:scale-105");
         
         newele.appendChild(newhead);
         newele.appendChild(neweditbtn);
