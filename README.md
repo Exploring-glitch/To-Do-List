@@ -13,11 +13,15 @@
   </ul>
   
   <h3><b># Here's how the To-Do List looks like:</b></h3>
-  
 </ul>
 
 ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173801.png)
 ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173845.png)
+
+<ul><h3><b># Here's how the edit functionality looks like:</b></h3></ul>
+  
+![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173921.png)
+
 
 
 
