@@ -16,10 +16,8 @@
   
 </ul>
 
-
-
 ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173801.png)
-![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/1f12ec80791b7d797c3dfe26a9125270c71bfebb/Screenshot%202025-01-09%20125211.png)
+![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173845.png)
 
 
 
