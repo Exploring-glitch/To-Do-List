@@ -33,45 +33,57 @@
         todos.push({
             title: document.querySelector("input").value
         })
+        document.querySelector("input").value="";
         render();
     }
-    
-    
     function delefunc(index){
         console.log("Delete button clicked");
         todos.splice(index,1);
         render();
+    }
+    function editfunc(index){
+        let newtitle = prompt("Hey user! Edit your to-do here:", todos[index].title);
+        if (newtitle!== null && newtitle.trim!== ""){
+            todos[index].title = newtitle;
+            render();
+        }
     }
 
 
     function todocomponent(a,index){
         
         const newhead= document.createElement("h1");
-        const newbtn= document.createElement("button");
-
+        const neweditbtn= document.createElement("button");
+        const newdelbtn= document.createElement("button");
         const newele= document.createElement("div");
 
         newhead.innerHTML= "•"+ " "+ a.title;
-        newbtn.innerHTML="Delete";
-        newbtn.onclick = function(){
+        neweditbtn.innerHTML="Edit";
+        newdelbtn.innerHTML="Delete";
+
+        neweditbtn.onclick = function(){
+            editfunc(index);
+        }
+        neweditbtn.classList.add("bg-gray-300","hover:bg-gray-800", "hover:text-white","pl-4","pr-4", "rounded-xl","shadow-sm");
+
+        newdelbtn.onclick = function(){
             delefunc(index);
         }
-        newbtn.classList.add("bg-gray-300","hover:bg-gray-800", "hover:text-white","pl-4","pr-4", "rounded-xl","shadow-sm");
+        newdelbtn.classList.add("bg-gray-300","hover:bg-gray-800", "hover:text-white","pl-4","pr-4", "rounded-xl","shadow-sm");
         
         newele.appendChild(newhead);
-        newele.appendChild(newbtn);
+        newele.appendChild(neweditbtn);
+        newele.appendChild(newdelbtn);
         
         return newele;
     }
-
 
     function render(){
         document.querySelector("#newdivhere").innerHTML="";
         for(let i=0; i<todos.length;i++){
             console.log(todos[i]);
             document.querySelector("#newdivhere").appendChild(todocomponent(todos[i],i))
-        }
-        
+        }  
     }
 </script>
 </html>
