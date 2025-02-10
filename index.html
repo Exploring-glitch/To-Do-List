@@ -8,85 +8,90 @@
     <title>Todo list</title>
 </head>
 
-
 <body class="bg-gray-800 flex justify-center items-center min-h-screen">
-    <div class="bg-gray-100 border-2 border-black m-4 rounded-lg shadow-lg w-full max-w-lg">
+    <div class="bg-gray-100 border-2 border-black m-4 rounded-lg shadow-lg w-full max-w-lg p-6">
         
-        <h1 class="text-2xl font-semibold text-center underline my-2">TO-DO LIST</h1>
+        <h1 class="text-2xl font-semibold text-center underline mb-4">TO-DO LIST</h1>
 
-        <div id="newdivhere" class="mx-1 md:mx-10 space-y-3 text-sm md:text-lg"></div>
+        <div id="todo-container" class="space-y-3"></div>
 
-        <div class="flex mx-1 gap-1 md:gap-2 md:mx-10 my-5">
-            <input type="text" placeholder="Add a new task.." class="bg-white border-2 border-gray-600 text-black hover:border-2 hover:border-gray-700 rounded-sm md:pl-2 shadow-sm">
-            <button class="bg-gray-600 text-white pr-2 pl-2 rounded-sm hover:bg-gray-700 shadow-sm hover:scale-105 font-medium" onclick="clickfunc()">Add Task</button> 
+        <div class="flex gap-2 my-5">
+            <input id="todo-input" type="text" placeholder="Add a new task..." class="flex-grow bg-white border-2 border-gray-600 text-black rounded-md p-2 shadow-sm focus:border-gray-700">
+            <button class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 shadow-md hover:scale-105 font-medium" onclick="addTask()">Add Task</button> 
         </div>
     </div>  
 </body>
 
-
-
 <script>
-    let todos=[];
-    function capitalize(str){
+    let todos = [];
+
+    function capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
-    function clickfunc(){
-        let inputtext= document.querySelector("input").value.trim();
-        todos.push({
-            title: capitalize(inputtext)
-        })
-        document.querySelector("input").value="";
+
+    function addTask() {
+        let inputElement = document.getElementById("todo-input");
+        let taskText = inputElement.value.trim();
+        
+        if (taskText === "") {
+            alert("Task cannot be empty!");
+            return;
+        }
+
+        todos.push({ title: capitalize(taskText) });
+        inputElement.value = "";
         render();
     }
-    function delefunc(index){
-        console.log("Delete button clicked");
-        todos.splice(index,1);
+
+    function deleteTask(index) {
+        todos.splice(index, 1);
         render();
     }
-    function editfunc(index){
-        let newtitle = prompt("Heyy user! Edit your task here:", todos[index].title);
-        if (newtitle!== null && newtitle.trim!== ""){
-            todos[index].title = newtitle;
+
+    function editTask(index) {
+        let newTitle = prompt("Edit your task:", todos[index].title);
+        if (newTitle !== null && newTitle.trim() !== "") {
+            todos[index].title = capitalize(newTitle.trim());
             render();
         }
     }
 
+    function createTodoElement(task, index) {
+        const taskDiv = document.createElement("div");
+        taskDiv.classList.add("flex", "justify-between", "items-center", "bg-white", "p-3", "rounded-md", "shadow-md", "border", "border-gray-300");
 
-    function todocomponent(a,index){
-        const newhead= document.createElement("h1");
-        const neweditbtn= document.createElement("button");
-        const newdelbtn= document.createElement("button");
-        const newele= document.createElement("div");
+        const taskText = document.createElement("span");
+        taskText.innerText = "• " + task.title;
+        taskText.classList.add("text-lg", "text-gray-700");
 
-        newhead.innerHTML= "•"+ " "+ a.title;
-        neweditbtn.innerHTML="Edit";
-        newdelbtn.innerHTML="Delete";
+        const buttonContainer = document.createElement("div");
 
-        newhead.classList.add("text-lg","font-medium","text-gray-700");
+        const editButton = document.createElement("button");
+        editButton.innerText = "Edit";
+        editButton.classList.add("text-white", "bg-blue-500", "hover:bg-blue-600", "py-1", "px-3", "rounded-md", "shadow-sm", "mr-2", "hover:scale-105");
+        editButton.onclick = () => editTask(index);
 
-        neweditbtn.onclick = function(){
-            editfunc(index);
-        }
-        neweditbtn.classList.add("text-white","bg-blue-500","hover:bg-blue-600", "hover:text-black","py-1","px-3", "rounded-md","shadow-sm","mr-3","font-medium","focus:outline-none","hover:scale-105");
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.classList.add("text-white", "bg-red-500", "hover:bg-red-600", "py-1", "px-3", "rounded-md", "shadow-sm", "hover:scale-105");
+        deleteButton.onclick = () => deleteTask(index);
 
-        newdelbtn.onclick = function(){
-            delefunc(index);
-        }
-        newdelbtn.classList.add("text-white","bg-red-500","hover:bg-red-600", "hover:text-black","py-1","px-3", "rounded-md","shadow-sm","mr-3","font-medium","focus:outline-none","hover:scale-105");
-        
-        newele.appendChild(newhead);
-        newele.appendChild(neweditbtn);
-        newele.appendChild(newdelbtn);
-        
-        return newele;
+        buttonContainer.appendChild(editButton);
+        buttonContainer.appendChild(deleteButton);
+
+        taskDiv.appendChild(taskText);
+        taskDiv.appendChild(buttonContainer);
+
+        return taskDiv;
     }
 
-    function render(){
-        document.querySelector("#newdivhere").innerHTML="";
-        for(let i=0; i<todos.length;i++){
-            console.log(todos[i]);
-            document.querySelector("#newdivhere").appendChild(todocomponent(todos[i],i))
-        }  
+    function render() {
+        const container = document.getElementById("todo-container");
+        container.innerHTML = "";
+
+        todos.forEach((task, index) => {
+            container.appendChild(createTodoElement(task, index));
+        });
     }
 </script>
 </html>
