@@ -45,7 +45,7 @@
     }
     function editfunc(index){
         let newtitle = prompt("Heyy user! Edit your task here:", todos[index].title);
-        if (newtitle!== null && newtitle.trim!== ""){
+        if (newtitle!== null && newtitle.trim()!== ""){
             todos[index].title = newtitle;
             render();
         }
