@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script> 
     
-    <title>Todo list</title>
+    <title>Todo List</title>
 </head>
 
 <body class="bg-gray-800 flex justify-center items-center min-h-screen">
@@ -48,17 +48,10 @@
         render();
     }
 
-
     function editTask(index) {
         let newTitle = prompt("Edit your task:", todos[index].title);
         if (newTitle !== null && newTitle.trim() !== "") {
             todos[index].title = capitalize(newTitle.trim());
-
-    function editfunc(index){
-        let newtitle = prompt("Heyy user! Edit your task here:", todos[index].title);
-        if (newtitle!== null && newtitle.trim()!== ""){
-            todos[index].title = newtitle;
-
             render();
         }
     }
