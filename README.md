@@ -5,8 +5,9 @@
   <p>This is a simple lightweight and user-friendly To-Do application where users can add tasks, edit tasks and delete tasks once completed. To make this project, I   used simple HTML, TAILWIND CSS and JAVASCRIPT.</p>
 </ul>
 
+
 ## 🚀 Live Demo
-👉 https://exploring-glitch.github.io/To-Do-List/
+<ul> 👉 https://exploring-glitch.github.io/To-Do-List/ </ul>
 
 
 ## ✨ Features
@@ -17,25 +18,26 @@
     <p>4.   Delete Tasks when completed</p> 
   </ul>
   
-  <h3><b># Here's how the To-Do List looks like:</b></h3>
-</ul>
 
 
 ## 📸 Screenshot
-
-### Main UI
-![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173801.png)
-![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173845.png)
-
-###  Edit and Delete Functionality
+<ul>
+  ### Main UI
+  ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173801.png)
+  ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173845.png)
   
-![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173921.png)
-![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20181741.png)
+  ###  Edit and Delete Functionality
+    
+  ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173921.png)
+  ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20181741.png)
+</ul>
 
 
 ## 🙌 Thank You
-Thanks for visiting! 
-Happy coding! 🚀
+<ul>
+  Thanks for visiting! 
+  Happy coding! 🚀  
+</ul>
 
 
 
