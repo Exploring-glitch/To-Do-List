@@ -2,7 +2,8 @@
 
 <ul>
   <h3><b># What is this?</b></h3>
-  <p>This is a simple lightweight and user-friendly To-Do application where users can add tasks, edit tasks and delete tasks once completed. To make this project, I   used simple HTML, TAILWIND CSS and JAVASCRIPT.</p>\
+  <p>This is a simple lightweight and user-friendly To-Do application where users can add tasks, edit tasks and delete tasks once completed. To make this project, I   used simple HTML, TAILWIND CSS and JAVASCRIPT.</p>
+</ul>
 
 ## 🚀 Live Demo
 👉 https://exploring-glitch.github.io/To-Do-List/
