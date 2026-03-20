@@ -22,6 +22,7 @@
 
 ## 📸 Screenshot
 <ul>
+  
   ### Main UI
   
   ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173801.png)
@@ -31,6 +32,7 @@
     
   ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20173921.png)
   ![Screenshot of To-Do List](https://github.com/Exploring-glitch/To-Do-List/blob/main/Screenshot%202025-02-08%20181741.png)
+  
 </ul>
 
 
